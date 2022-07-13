@@ -19,13 +19,13 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $income = Transaction::where('transaction_status', 'SUCCESS')->sum('transaction_total');
+        $income = Transaction::where('transaction_status', 'LUNAS')->sum('transaction_total');
         $sales = Transaction::count();
         $items = Transaction::with('details')->orderBy('id', 'DESC')->take(5)->get();
         $pie = [
             'pending' => Transaction::where('transaction_status', 'PENDING')->count(),
-            'failed' => Transaction::where('transaction_status', 'FAILED')->count(),
-            'success' => Transaction::where('transaction_status', 'SUCCESS')->count()
+            'gagal' => Transaction::where('transaction_status', 'GAGAL')->count(),
+            'lunas' => Transaction::where('transaction_status', 'LUNAS')->count()
         ];
 
         return view('pages.dashboard')->with([

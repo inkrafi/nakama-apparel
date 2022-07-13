@@ -86,6 +86,7 @@ import RelatedNakama from "@/components/RelatedNakama.vue";
 import FooterNakama from "@/components/FooterNakama.vue";
 
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "product",
   components: {
     HeaderNakama,

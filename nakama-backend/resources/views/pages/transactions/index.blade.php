@@ -34,9 +34,9 @@
                                             <td>
                                                 @if($item->transaction_status == 'PENDING') 
                                                     <span class="badge badge-info">
-                                                @elseif($item->transaction_status == 'SUCCESS') 
+                                                @elseif($item->transaction_status == 'LUNAS') 
                                                     <span class="badge badge-success">
-                                                @elseif($item->transaction_status == 'FAILED') 
+                                                @elseif($item->transaction_status == 'GAGAL') 
                                                     <span class="badge badge-danger">
                                                 @else
                                                     <span>
@@ -46,10 +46,10 @@
                                             </td>
                                             <td>
                                                 @if($item->transaction_status == 'PENDING')
-                                                    <a href="{{ route('transactions.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-sm">
+                                                    <a href="{{ route('transactions.status', $item->id) }}?status=LUNAS" class="btn btn-success btn-sm">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-danger btn-sm">
+                                                    <a href="{{ route('transactions.status', $item->id) }}?status=GAGAL" class="btn btn-danger btn-sm">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 @endif

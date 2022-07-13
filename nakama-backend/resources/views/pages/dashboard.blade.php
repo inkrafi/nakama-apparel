@@ -76,9 +76,9 @@
                                                 <td>
                                                     @if($item->transaction_status == 'PENDING') 
                                                         <span class="badge badge-info">
-                                                    @elseif($item->transaction_status == 'SUCCESS') 
+                                                    @elseif($item->transaction_status == 'LUNAS') 
                                                         <span class="badge badge-success">
-                                                    @elseif($item->transaction_status == 'FAILED') 
+                                                    @elseif($item->transaction_status == 'GAGAL') 
                                                         <span class="badge badge-danger">
                                                     @else
                                                         <span>
@@ -131,8 +131,8 @@
             // Pie chart flotPie1
             var piedata = [
                 { label: "Pending", data: [[1, {{ $pie['pending'] }} ]], color: '#5c6bc0'},
-                { label: "Gagal", data: [[1, {{ $pie['failed'] }} ]], color: '#ef5350'},
-                { label: "Lunas", data: [[1, {{ $pie['success'] }} ]], color: '#66bb6a'}
+                { label: "Gagal", data: [[1, {{ $pie['gagal'] }} ]], color: '#ef5350'},
+                { label: "Lunas", data: [[1, {{ $pie['lunas'] }} ]], color: '#66bb6a'}
             ];
 
             $.plot('#flotPie1', piedata, {

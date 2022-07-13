@@ -9,8 +9,8 @@
                         <div class="col-md-6 text-title">
                             <!-- <span>Bag,kids</span> -->
                             <h1>Nakama Apparel</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            <p style="font-size:20px;">
+                                Selamat datang di Nakama Apparel, tempat terbaik untuk kamu pecinta One Piece. Jadilah bagian dari Nakama!
                             </p>
                             <a href="#" class="primary-btn">Shop Now</a>
                         </div>

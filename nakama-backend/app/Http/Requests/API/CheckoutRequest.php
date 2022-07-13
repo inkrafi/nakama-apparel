@@ -29,7 +29,7 @@ class CheckoutRequest extends FormRequest
             'number' => 'required|max:191',
             'address' => 'required',
             'transaction_total' => 'required|integer',
-            'transaction_status' => 'nullable|string|in:PENDING,SUCCESS,FAILED',
+            'transaction_status' => 'nullable|string|in:PENDING,LUNAS,GAGAL',
             'transaction_details' => 'required|array',
             'transaction_details.*' => 'integer|exists:products,id',
         ];

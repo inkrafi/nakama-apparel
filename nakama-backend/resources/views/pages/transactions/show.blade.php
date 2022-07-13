@@ -46,12 +46,12 @@
 
 <div class="row">
     <div class="col-4">
-        <a href="{{ route('transactions.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-block">
+        <a href="{{ route('transactions.status', $item->id) }}?status=LUNAS" class="btn btn-success btn-block">
             <i class="fa fa-check"></i> Set Lunas
         </a>
     </div>
     <div class="col-4">
-        <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-danger btn-block">
+        <a href="{{ route('transactions.status', $item->id) }}?status=GAGAL" class="btn btn-danger btn-block">
             <i class="fa fa-times"></i> Set Gagal
         </a>
     </div>
