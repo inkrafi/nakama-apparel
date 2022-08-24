@@ -110,13 +110,7 @@
     <!-- Related Products Section End -->
 </template>
 
-<script>
-import axios from "axios";
 
-export default {
-    name: 'RelatedNakama',
-}
-</script>
 
 <style scoped>
 .product-item .pi-pic {

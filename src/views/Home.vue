@@ -18,6 +18,7 @@ import InstaNakama from "@/components/InstaNakama.vue";
 import FooterNakama from "@/components/FooterNakama.vue";
 
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "home",
   components: {
     HeaderNakama,
