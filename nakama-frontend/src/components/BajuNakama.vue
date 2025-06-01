@@ -75,18 +75,18 @@ export default {
     methods: {
         saveKeranjang(idProduct, nameProduct, priceProduct, photoProduct) {
 
-          var productStored = {
-            "id": idProduct,
-            "name": nameProduct,
-            "price": priceProduct,
-            "photo": photoProduct
-          }
+        var productStored = {
+        "id": idProduct,
+        "name": nameProduct,
+        "price": priceProduct,
+        "photo": photoProduct
+        }
 
-          this.keranjangUser.push(productStored);
-          const parsed = JSON.stringify(this.keranjangUser);
-          localStorage.setItem("keranjangUser", parsed);
+        this.keranjangUser.push(productStored);
+        const parsed = JSON.stringify(this.keranjangUser);
+        localStorage.setItem("keranjangUser", parsed);
 
-          window.location.reload();
+        window.location.reload();
         },
         pemesanan() {
             if(this.pesan.productStored) {

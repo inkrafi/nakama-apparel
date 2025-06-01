@@ -28,7 +28,7 @@
                     <div class="footer-widget text-left">
                         <h5>Information</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="../views/About.vue">About Us</a></li>
                             <li><a href="#">Product</a></li>
                             <li><a href="#">Checkout</a></li>
                             <li><a href="#">Service Us</a></li>
