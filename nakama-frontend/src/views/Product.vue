@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="pd-desc">
                                     <p v-html="productDetails.description"></p>
-                                    <h4>Rp. {{ productDetails.price }}</h4>
+                                    <h4>Rp. {{ formatRupiah(productDetails.price) }}</h4>
                                 </div>
                                 <div class="quantity">
                                     <router-link to="/cart"> 
@@ -100,14 +100,18 @@ export default {
           keranjangUser: []
       }
   },
-  methods: {
-      setDataPicture(data) {
-          // replace object productDetails dengan data dari API
-          this.productDetails = data;
-          // replace value gambar_default dengan data dari API (galleries)
-          this.gambar_default = data.galleries[0].photo;
-      },
-      saveKeranjang(idProduct, nameProduct, priceProduct, photoProduct) {
+    methods: {
+        formatRupiah(value) {
+            if (!value) return '0';
+            return Number(value).toLocaleString('id-ID', { minimumFractionDigits: 0 });
+        },
+        setDataPicture(data) {
+            // replace object productDetails dengan data dari API
+            this.productDetails = data;
+            // replace value gambar_default dengan data dari API (galleries)
+            this.gambar_default = data.galleries[0].photo;
+        },
+        saveKeranjang(idProduct, nameProduct, priceProduct, photoProduct) {
 
           var productStored = {
             "id": idProduct,

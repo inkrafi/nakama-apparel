@@ -1,38 +1,37 @@
 <template>
     <!-- Women Banner Section Begin -->
     <section>
-        
-
         <div class="container">
             <div class="row justify-content-around">
-                <div class="col-md-4 mt-5" v-if="products.length > 0">
-                        <div class="product-item" v-for="itemProduct in products" v-bind:key="itemProduct.id">
-                            <div class="pi-pic bottom-space">
-                                <img v-bind:src="itemProduct.galleries[0].photo" alt="" />
-                                <ul>
-                                    <li @click="saveKeranjang(itemProduct.id, itemProduct.name, itemProduct.price, itemProduct.galleries[0].photo), pemesanan()" class="w-icon active">
-                                        <a href="#">
-                                            <i class="icon_bag_alt"></i>
-                                        </a>
-                                    </li>
-                                    <li class="quick-view"><router-link v-bind:to="'/product/'+itemProduct.id">Lihat Produk</router-link></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">{{ itemProduct.type }}</div>
-                                <a href="#">
-                                    <h5>{{ itemProduct.name }}</h5>
-                                </a>
-                                <div class="product-price">
-                                    Rp. {{ itemProduct.price }}
-                                    <span>Rp.120.000</span>
+                <div class="col-lg-12 mt-5" v-if="products.length > 0">
+                    <div class="row product-row">
+                        <div class="col-md-4 mb-4" v-for="itemProduct in products" v-bind:key="itemProduct.id">
+                            <div class="product-item">
+                                <div class="pi-pic bottom-space">
+                                    <img v-bind:src="itemProduct.galleries[0].photo" alt="" />
+                                    <ul>
+                                        <li @click="saveKeranjang(itemProduct.id, itemProduct.name, itemProduct.price, itemProduct.galleries[0].photo), pemesanan()" class="w-icon active">
+                                            <a href="#">
+                                                <i class="icon_bag_alt"></i>
+                                            </a>
+                                        </li>
+                                        <li class="quick-view"><router-link v-bind:to="'/product/'+itemProduct.id">Lihat Produk</router-link></li>
+                                    </ul>
+                                </div>
+                                <div class="pi-text">
+                                    <div class="catagory-name">{{ itemProduct.type }}</div>
+                                    <a href="#">
+                                        <h5>{{ itemProduct.name }}</h5>
+                                    </a>
+                                    <div class="product-price">
+                                        Rp. {{ formatRupiah(itemProduct.price) }}
+                                        <span>Rp.120.000</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
-                <!-- <div class="col-md-4 mt-5">
-                    <p>Halo</p>
-                </div> -->
 
                 <div class="col-lg-12" v-else>
                     <p>
@@ -73,6 +72,11 @@ export default {
         }
     },
     methods: {
+        formatRupiah(value) {
+            if (!value) return '0';
+            return Number(value).toLocaleString('id-ID', { minimumFractionDigits: 0 });
+        },
+
         saveKeranjang(idProduct, nameProduct, priceProduct, photoProduct) {
 
         var productStored = {
@@ -130,9 +134,13 @@ section {
     -moz-box-shadow: 4px 3px 13px -10px rgba(66,80,107,0.46);
 }
 .product-item .pi-text {
-    margin-bottom: 100px;
+    margin-bottom: 30px; /* Mengurangi margin bottom */
 }
 .product-item .pi-text .product-price {
     color: #bd632f;
+}
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
 }
 </style>
